@@ -4,7 +4,7 @@
 <div class="container mx-auto px-4 py-8">
     <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
         @if($article->image)
-            <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}" class="w-full h-64 object-cover">
+        <img src="{{ asset('storage/image.png') }}" alt="{{ $article->title }}" class="w-full h-64 object-cover">
         @else
             <div class="w-full h-64 bg-gray-200 flex items-center justify-center">
                 <span class="text-gray-500">No Image Available</span>

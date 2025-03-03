@@ -8,11 +8,11 @@
 
 <form action="{{ route('articles.index') }}" method="GET" class="mb-4">
     <select name="category_id"
-        class="px-4 py-2 border border-black rounded-md bg-gray-900 text-black focus:ring focus:bg-black appearance-none"
+        class="px-4 py-2 border border-black rounded-md bg-white text-black focus:ring focus:bg-white appearance-none"
         onchange="this.form.submit()">
-        <option value="" class="bg-black text-black">Semua Kategori</option>
+        <option value="" class="bg-white text-black">Semua Kategori</option>
         @foreach($categories as $category)
-            <option value="{{ $category->id }}" class="bg-gray-900 text-black"
+            <option value="{{ $category->id }}" class="bg-white text-black"
                 {{ request('category_id') == $category->id ? 'selected' : '' }}>
                 {{ $category->name }}
             </option>
@@ -26,7 +26,7 @@
     <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
         @foreach($articles as $article)
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
-                <img src="{{ $article->image ?? 'https://via.placeholder.com/640x480' }}" alt="Gambar Artikel" class="w-full h-40 object-cover">
+            <img src="{{ asset('storage/image.png') }}" alt="Gambar Artikel" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h2 class="text-xl font-semibold">{{ $article->title }}</h2>
                     <p class="text-gray-500 text-sm">Kategori: {{ $article->category->name }}</p>
