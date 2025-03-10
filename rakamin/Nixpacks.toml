@@ -1,0 +1,8 @@
+[phases.setup]
+nixpkgsArchive = "67f9fd82b9c4bd5a085e553927095f35fcf2646c"
+
+[phases.build]
+cmds = ["composer install --no-dev", "php artisan migrate --force"]
+
+[start]
+cmd = "vendor/bin/heroku-php-apache2 public/"
